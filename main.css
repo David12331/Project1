@@ -1,0 +1,45 @@
+.welcome-container {
+    background-color: yellow;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .welcome-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+
+  .subtitle-container {
+    background-color: lightblue;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+  }
+  
+
+  .unfny-text {
+    font-size: 36px;
+    text-align: center;
+  }
+  
+
+  .input-container {
+    background-color: gray;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  .input-box {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    padding: 5px;
+  }
