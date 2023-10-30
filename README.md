@@ -9,7 +9,7 @@ The following are the steps I foresee having to take in order to build this game
 1. Initialize the game:
    - Create an array of words to be unscrambled
    - Initialize a score variable to keep track of the player's score
-   - Set a time limit (e.g., 30 seconds)
+   - Set a time limit (30 seconds)
    - Create a function to choose a random word from the array
    - Create a function to scramble the chosen wor
    - Display the scrambled word on the screen
