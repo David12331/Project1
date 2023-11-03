@@ -1,5 +1,5 @@
 ///////// variables //////////
-const words = ["butter","snake","three","coding","candy","apple","debugging","syntax","function","class","method","object",];
+const words = ["butter","snake","three","coding","candy","apple","debugging","syntax","function","class","method","object","funny"];
 
 let gameRunning = true;
 
@@ -13,7 +13,7 @@ let displayWord = null;
 
 let timerIndicator = false;
 
-//////// element references /////////
+//////// element references ///////////
 
 let userInput = document.getElementById("input");
 let button = document.getElementById("submitBtn");
