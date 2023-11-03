@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 7.5in;
+  height: 7.4in;
   
 }
 
@@ -95,7 +95,7 @@ h3 {
   animation: flash 1s infinite; 
 }
 
-@keyframes flash {
+@keyframes flash {  
   0% {
     opacity: 1; 
   }
