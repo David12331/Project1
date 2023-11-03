@@ -1,5 +1,5 @@
 ///////// variables //////////
-const words = ["butter", "snake", "three", "coding", "candy","apple"];
+const words = ["butter","snake","three","coding","candy","apple","debugging","syntax","function","class","method","object",];
 
 let gameRunning = true;
 

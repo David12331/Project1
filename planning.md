@@ -1,5 +1,5 @@
 My idea for this project is to create a game of scramble. 
-In this game,the players must unscramble a set of letters to form a word within a given time limit of 30 seconds. If the player chooses to, they can also see a hint by pressing a button. The player looses if he runs out of time to uncreamble the word. 
+In this game,the players must unscramble a set of letters to form a word within a given time limit of 30 seconds. The player looses if he runs out of time to unscreamble at least five words in the given 30 seconds. 
 
 
 The following are the steps I foresee having to take in order to build this game.
@@ -24,28 +24,24 @@ The following are the steps I foresee having to take in order to build this game
    - If incorrect:
      - Display an error or 'keep trying' message
 
-3. Create a hint feature:
-   - Add a "Hint" button to the interface
-   - When the button is clicked, reveal a letter of the scrambled word
 
-4. Countdown timer:
+3. Countdown timer:
    - Start a timer that counts down from 30 seconds
    - Update the displayed time remaining on the screen
    - If the timer reaches 0:
      - End the game
      - Display the final score
 
-5. End the game:
-   - Display a game over message
+4. End the game:
    - Show the player's final score
    - Allow the player to restart the game
 
-6. Repeat the game:
+5. Repeat the game:
    - If the player chooses to play again, reset the score and start a new game
 
-7. Main game loop:
+6. Main game loop:
    - Continuously check for player input and game events
-   - Respond to player actions (submitting answers, using hints)
+   - Respond to player actions (submitting answers, etc...)
 
 
 Variables 
