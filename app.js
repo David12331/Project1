@@ -1,5 +1,5 @@
 ///////// variables //////////
-const words = ["one", "two", "three", "four", "five"];
+const words = ["butter", "snake", "three", "coding", "candy","apple"];
 
 let gameRunning = true;
 
@@ -12,6 +12,7 @@ let currentWord = null;
 let displayWord = null;
 
 let timerIndicator = false;
+
 //////// element references /////////
 
 let userInput = document.getElementById("input");
@@ -27,11 +28,7 @@ let resetElement = document.getElementById("reset");
 
 /////funtions//////
 
-//function startGame(){
 
-// Initializes the game
-
-//}
 
 function scrambleWord() {
     if (gameRunning === true){
@@ -100,9 +97,7 @@ function unscrambleWord(currentWord) {
 
 function displayShuffledWord(displayWord) {
     if(gameRunning === true){
-
-    
-    
+ 
     textContainer.textContent = displayWord; 
 }
 }
@@ -140,25 +135,19 @@ scoreElement.textContent = score;
 }
 
   function endGame(){
-// Ends game and displays final score
+// Ends game and prompts restart option
 
-    //makeScreenBlack()
     gameRunning = false;
     console.log("Game Over")
     resetElement.style.display = "block";
     
-    //reset()
-    
+
 
   }
 
-  //function makeScreenBlack() {
-    //endScreen.style.backgroundColor = 'black';
- // }
-
 
  function reset(){
-    //resetElement.style.display = "none"
+
     console.log('resetWorking')
     timerIndicator = false
     gameRunning = true;
@@ -171,8 +160,8 @@ scoreElement.textContent = score;
     scoreElement.textContent = 0;
     winOrLoseElement.textContent = "";
     countdownElement.textContent = "";
-    resetElement.style.display = "none"; // Hide the reset button
-    scrambleWord(); // Start a new game
+    resetElement.style.display = "none"; // Hides the reset button
+    scrambleWord(); // Starts a new game
     startTimer();
 
  }
@@ -180,6 +169,10 @@ scoreElement.textContent = score;
 
   startTimer();
   scrambleWord();
+
+
+
+  ///////// event listeners ////////////
 
   button.addEventListener("click", function () {
     unscrambleWord(currentWord);
