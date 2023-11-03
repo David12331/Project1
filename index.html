@@ -19,13 +19,25 @@
         <div class="subtitle">Find the Word</div>
       </div>
       
-      <div class="unfny-text">UNFNY</div>
+      <div class="unfny-text" id="shuffledWord">UNFNY</div>
       
-      <div class="input-container" id='input'>
-        <input type="text" class="input-box" placeholder="TYPE GUESS HERE">
+      <div class="input-container">
+        <input id='input' type="text" class="input-box" placeholder="TYPE GUESS HERE">
       </div>
 
       <button id="submitBtn">Submit</button>
+
+      <div id="output"></div>
+
+      <h3>Current score:</h3>
+      <div id="score"></div>
+
+
+      <div id="winOrLose"></div>
+
+      <div class="timer" id="countdown">30</div>
+
+      <button id="reset">Reset</button>
 
 </body>
 </html>

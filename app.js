@@ -1,126 +1,188 @@
 ///////// variables //////////
-const words = ["one","two","three","four","five"]
+const words = ["one", "two", "three", "four", "five"];
+
+let gameRunning = true;
 
 let score = 0;
 
-let currentWord = null
+let mistakes = 0;
 
+let currentWord = null;
 
+let displayWord = null;
 
-
+let timerIndicator = false;
 //////// element references /////////
 
 let userInput = document.getElementById("input");
 let button = document.getElementById("submitBtn");
-
-
-
-
-
-
-
-
-
-
+let textContainer = document.getElementById("shuffledWord");
+let outputElement = document.getElementById("output");
+let scoreElement = document.getElementById("score");
+let winOrLoseElement = document.getElementById("winOrLose");
+let countdownElement = document.getElementById("countdown");
+let endScreen = document.getElementById('blackScreen');
+let resetElement = document.getElementById("reset");
 
 
 /////funtions//////
 
-
 //function startGame(){
 
-// Initializes the game    
+// Initializes the game
 
 //}
 
+function scrambleWord() {
+    if (gameRunning === true){
+  // Selects the word and puts the letters in Random Order     
 
-function scrambleWord(){
-// Selects the word and puts the letters in Random Order
+  let randomIndex = Math.floor(Math.random() * words.length);
+  let scrambledWord = words[randomIndex];
+  let scrambledWordArray = scrambledWord.split("");
 
-    let randomIndex = Math.floor(Math.random() * words.length);
-    let scrambledWord = words[randomIndex];
-    let scrambledWordArray = scrambledWord.split('');
+  let output = [];
 
-    let output = [];
+  while (scrambledWordArray.length) {
+    let idx = Math.floor(Math.random() * scrambledWordArray.length);
+    output.push(scrambledWordArray.splice(idx, 1)[0]);
+  }
 
-    while (scrambledWordArray.length) {
-        let idx = Math.floor(Math.random() * scrambledWordArray.length);
-        output.push(scrambledWordArray.splice(idx, 1)[0]);
-    }
+  let scrambleWordShuffled = output.join("");
 
-    let scrambleWordShuffled = output.join("");
+  currentWord = scrambledWord;
+  displayWord = scrambleWordShuffled; ////////////// just added
 
-    //unscrambleWord(scrambledWord);
-    currentWord = scrambledWord;
+  
+  displayShuffledWord(displayWord); /////////////used to be currentWord
 
-    //unscrambleWord(currentWord)
+  console.log(currentWord);
+  console.log(scrambleWordShuffled);
 
-    console.log(scrambledWord);
-    console.log(scrambleWordShuffled)
-
-     
-
-    return scrambleWordShuffled;  // This is to be displayed on the screen for the user to see
-
-    
+///////////////////////////
+  if (score === 5){
+    console.log("win")
+    winOrLoseElement.textContent = "You Win!";
+    timerIndicator = 1;
+    endGame()
 }
+
+///////////////////////////
+
+  return scrambleWordShuffled; // This is to be displayed on the screen for the user to see
+}
+}
+
+
+function unscrambleWord(currentWord) {
+    if (gameRunning === true){
+  // Compares user input to the correct word
+
+  let inputContent = userInput.value;
+
+  if (inputContent === currentWord) {
+    outputElement.textContent = "Correct";
+    
+    score = score + 1;
+    console.log(score)
+    displayScore(score)
+    scrambleWord();
+  } else {
+    outputElement.textContent = "Try Again";
     
 
-function unscrambleWord(currentWord){
-    // Compares user input to the correct word
+    displayScore(score)
+    
+    
+  }
+}
+}
+
+function displayShuffledWord(displayWord) {
+    if(gameRunning === true){
+
+    
+    
+    textContainer.textContent = displayWord; 
+}
+}
+
+  
+function startTimer() {
    
-    let inputContent = userInput.value;
-    console.log(inputContent)
-    
-    //console.log(currentWord)
+    if (gameRunning === true){
+    let timer = 30; 
+  
+    let countdown = setInterval(function () {
+      if (timer >= 0) {
+        countdownElement.textContent = timer;
+        timer = timer - 1;
+        if(timerIndicator === 1){
+            clearInterval(countdown);
+            return; 
+        }
+      } else {
+        clearInterval(countdown);
+        countdownElement.textContent = "Time is up!";
+        endGame()
+        
+      }
+    }, 1000);
+  }
+}
 
+function displayScore(score) {
+    if (gameRunning === true){
 
-         //if (inputContent === currentWord){
-            // console.log('Correct');
-        // }
-        //else {
-            //console.log('Incorrect');
-       // }
-     };
+scoreElement.textContent = score; 
 
+  }
+}
 
-
-//function hint(){
-
-// Provide a hint to the player if the player asks for it 
-
-//}
-
-//function timer(){
-// Counts down 30 seconds once every new word appears
-
-
- //setTimeout(timer, 30000);
-
-
-//}
-
-//function updateScore() {
-
-// Updates player score     
-
-//}
-
-//function endGame(){
-
+  function endGame(){
 // Ends game and displays final score
 
-//}
+    //makeScreenBlack()
+    gameRunning = false;
+    console.log("Game Over")
+    resetElement.style.display = "block";
+    
+    //reset()
+    
 
-scrambleWord()
+  }
+
+  //function makeScreenBlack() {
+    //endScreen.style.backgroundColor = 'black';
+ // }
 
 
+ function reset(){
+    //resetElement.style.display = "none"
+    console.log('resetWorking')
+    timerIndicator = false
+    gameRunning = true;
+    score = 0;
+    mistakes = 0;
+    currentWord = null;
+    displayWord = null;
+    userInput.value = "";
+    outputElement.textContent = "";
+    scoreElement.textContent = 0;
+    winOrLoseElement.textContent = "";
+    countdownElement.textContent = "";
+    resetElement.style.display = "none"; // Hide the reset button
+    scrambleWord(); // Start a new game
+    startTimer();
 
-button.addEventListener("click", function() {
+ }
+
+
+  startTimer();
+  scrambleWord();
+
+  button.addEventListener("click", function () {
     unscrambleWord(currentWord);
-});
+  });
 
-
-//
-
-
+resetElement.addEventListener("click", reset);

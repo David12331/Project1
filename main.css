@@ -1,46 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 7.5in;
+  
+}
+
+
 .welcome-container {
-    background-color: yellow;
-    padding: 20px;
-    text-align: center;
-    
-  }
-  
-  .welcome-title {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+  background-color: yellow;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .subtitle-container {
-    background-color: lightblue;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .subtitle {
-    font-size: 18px;
-  }
-  
 
-  .unfny-text {
-    font-size: 36px;
-    text-align: center;
-  }
-  
+.welcome-title {
+  font-size: 24px;
+  font-weight: bold;
+}
 
-  .input-container {
-    background-color: gray;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    margin: 20px auto;
+
+.subtitle-container {
+  background-color: lightblue;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.subtitle {
+  font-size: 18px;
+}
+
+
+#shuffledWord {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+
+.input-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.input-box {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+  text-align: center;
+}
+
+
+#submitBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: blue;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+
+#output {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+
+h3 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+
+#score {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#winOrLose {
+  font-size: 36px; 
+  color: red; 
+  animation: flash 1s infinite; 
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1; 
   }
-  
-  .input-box {
-    border: none;
-    outline: none;
-    background: transparent;
-    width: 100%;
-    font-size: 16px;
-    padding: 5px;
+  50% {
+    opacity: 0; 
   }
+ 
+}
+
+.timer {
+  font-size: 36px;
+  font-weight: bold;
+  color: orange;
+  text-align: center;
+  margin-top: 50px;
+  animation: flash 1s infinite; 
+}
+
+#reset {
+  display: none; 
+  position: fixed;
+  background-color: lightblue;
+  bottom: 20px; 
+  right: 20px; 
+  padding: 15px 30px;
+  font-size: 15px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
