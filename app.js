@@ -26,7 +26,7 @@ let endScreen = document.getElementById('blackScreen');
 let resetElement = document.getElementById("reset");
 
 
-/////funtions//////
+/////funtions///////
 
 
 
