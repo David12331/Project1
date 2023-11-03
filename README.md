@@ -21,6 +21,15 @@ If the guess is incorrect, the user can try again, and the score will remain the
 The game ends when the user reaches a score of 5 (win) or when the timer reaches zero and the score is less than five (loss).
 
 
+The folowwing are screenshots of different scenarios in the game.
+
+![](./Gameplay.png)
+
+![](./Gameplay_mistake.png)
+
+![](./Gameplay_out_of_time.png)
+
+
 Future Features
 
 Here are some features that could be added in the future:
@@ -28,3 +37,4 @@ Here are some features that could be added in the future:
 - Difficulty Levels: Add different difficulty levels with longer words and shorter time limits.
 - High Scores: Keep track of the highest scores achieved by players.
 - Hint System: Provide players with the option to receive hints or clues for the scrambled word.
+
